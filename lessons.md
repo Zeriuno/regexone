@@ -26,3 +26,31 @@ match var g = 123;
 \D        - non digits characters
 \d        - digits characters (eventually combined)
 [a-z1-3]+ - characters ranging from a to z and 1 to 3, one occurence or more
+
+
+2
+
+match cat.
+match 896.
+match ?=+.
+skip abc1
+
+
+\.        - the dot
+\.$       - ending with the dot
+\W$       - ending with a non alphanumeric character
+.{3}\.    - three characters and then a dot
+
+3
+
+match can
+match man
+match fan
+skip dan
+skip ran
+skip pan
+
+[cmf]     - in the cmf range
+[cmf]an   - idem, followed by 'an'
+[^drp]    - not in the drp range: isn't working but it should
+[^drp]an  - not in the drp range, and followed by 'an'
