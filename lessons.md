@@ -55,3 +55,13 @@ skip pan
 [cmf]an   - idem, followed by 'an'
 [^drp]    - not in the drp range: isn't working but it should
 [^drp]an  - not in the drp range, and followed by 'an'
+
+
+4
+
+match hog
+match dog
+skip bog
+
+[^bog]     - not bog
+[^b]og     - og, but not b
