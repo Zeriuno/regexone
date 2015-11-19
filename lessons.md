@@ -122,3 +122,16 @@ skip No file found.
 \?      - a question mark
 \?$     - a question mark at the end
 ^[^N]   - at th beginning, not a capital N
+
+
+9
+
+match 1.   abc
+match 2.	abc
+match 3.           abc
+skip  4.abc
+
+\s      - a whitespace
+\s+     - a whitespace or more
+[ \t]   - in the range blanck space and tab
+[ \t]+  - idem, one or more
