@@ -80,3 +80,13 @@ skip  ccz
 [A-C]     - from everything in the interval A to C
 [^x-z]$   - not having something in the interval x to z at the end
 ^[^a-c]   - at the beginning it should not be something in the interval from a to c
+
+
+6
+
+match wazzzzup
+match wazzzup
+skip wazup
+
+z[2]      - z repeating twice
+z{2,9}    - z repeating from twice up to 9 times     
