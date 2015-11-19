@@ -135,3 +135,13 @@ skip  4.abc
 \s+     - a whitespace or more
 [ \t]   - in the range blanck space and tab
 [ \t]+  - idem, one or more
+
+
+10
+
+match Mission: successful
+skip Last Mission: unsuccessful
+skip Next Mission: successful upon capture of target
+
+^M      - starting with a capital M
+^[^LN]  - starting not with L nor with N
