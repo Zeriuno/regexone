@@ -65,3 +65,18 @@ skip bog
 
 [^bog]     - not bog
 [^b]og     - og, but not b
+
+
+5
+
+match Ana
+match Bob
+match Cpc
+skip  aax
+sky   bby
+skip  ccz
+
+
+[A-C]     - from everything in the interval A to C
+[^x-z]$   - not having something in the interval x to z at the end
+^[^a-c]   - at the beginning it should not be something in the interval from a to c
