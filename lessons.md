@@ -107,3 +107,18 @@ c        - having c
 c$       - with a c at the end
 \w{2}    - any character repeating twice
 c+       - c one or more repetitions
+
+
+8
+
+match 1 file found?
+match 2 files found?
+match 24 files found?
+skip No file found.
+
+\d file[s]* found? - a number, 'file' and the s optional, then 'found?'
+\d      - a digit
+\d+     - a digit or more
+\?      - a question mark
+\?$     - a question mark at the end
+^[^N]   - at th beginning, not a capital N
