@@ -90,3 +90,20 @@ skip wazup
 
 z[2]      - z repeating twice
 z{2,9}    - z repeating from twice up to 9 times     
+
+
+7
+
+match aaaabcc
+match aabbbbc
+match aacc
+skip  a
+
+a{2}     - a repeating twice
+a{2,4}   - a repeating twice to four times
+c        - having c
+[b,c]    - in the range b and c
+[^a]     - do not select a
+c$       - with a c at the end
+\w{2}    - any character repeating twice
+c+       - c one or more repetitions
