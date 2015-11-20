@@ -145,3 +145,15 @@ skip Next Mission: successful upon capture of target
 
 ^M      - starting with a capital M
 ^[^LN]  - starting not with L nor with N
+
+
+11
+
+capture file_record_transcript.pdf → file_record_transcript
+capture file_07241999.pdf          → file_07241999
+skip testfile_fake.pdf.tmp
+
+(+)\.pdf$        - everything ending with the pdf extension, do not capture the extension
+(.+)\.pdf$       - everything, one character or more, ending with the pdf extension, do not capture the extension
+(\w+)\.pdf$      - every alphanumeric character, once or more, ending with the pdf extension, do not caputre the extension
+(file_\w+)\.pdf$ - every 'file_' plus one or more alphanumeric character, ending with the pdf extension, do not capture the extension
