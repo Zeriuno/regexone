@@ -15,4 +15,6 @@
 {n,z}  - n to z repetitions
 ?      - Optional character
 ^...$  - Start and end
-
+\b     - Boundary between a word and a non-word character
+\0     - The full matched text
+\1, \2 - Group 1, group 2
