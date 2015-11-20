@@ -179,3 +179,15 @@ capture 1024x768  → 1024,768
 (\d{4}).(\d+)     - four digits, any character, then one or more digits. Capture the first four and the rest after the fifth character
 (.{4}).(.+)       - four of any character, any character, then one or more of any character. Capture the first four and those after the fifth
 ((.+)x(.+)        - any character, one or more, then a 'x' and then any character, one or more of them. Capture the blocks before and after the 'x'
+
+
+14
+
+match I love cats
+match I love dogs
+skip I love logs
+skip I love cogs
+
+I love (cat|dog)s - 'I love ' then 'cat' or 'dog' then an 's'
+.*(cat|dog).      - any character zero or more times, 'cat' or 'dog' then any character
+.+(ca|do).+       - any character once or more, 'ca' or 'do' then any character once or more
