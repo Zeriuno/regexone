@@ -157,3 +157,14 @@ skip testfile_fake.pdf.tmp
 (.+)\.pdf$       - everything, one character or more, ending with the pdf extension, do not capture the extension
 (\w+)\.pdf$      - every alphanumeric character, once or more, ending with the pdf extension, do not caputre the extension
 (file_\w+)\.pdf$ - every 'file_' plus one or more alphanumeric character, ending with the pdf extension, do not capture the extension
+
+
+12
+
+capture Jan 1987  → Jan 1987, 1987
+capture May 1969  → May 1969, 1969
+capture Aug 2011  → Aug 2011, 2011
+
+([A-Za-z]+\s(\d+)) - in the range A-Z and a-z, one or more characters, a blankspace a number or more. Capture the whole and the number(s)
+(\w+\s(.+))        - alphanumerical character, one or more, a blankspace, any character, one or more. Capture the whole and the characters after the blankspace
+(.{4}(.{4}))       - any character, four, than any character, four. Capture the whole and the last four
