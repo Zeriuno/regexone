@@ -168,3 +168,14 @@ capture Aug 2011  → Aug 2011, 2011
 ([A-Za-z]+\s(\d+)) - in the range A-Z and a-z, one or more characters, a blankspace a number or more. Capture the whole and the number(s)
 (\w+\s(.+))        - alphanumerical character, one or more, a blankspace, any character, one or more. Capture the whole and the characters after the blankspace
 (.{4}(.{4}))       - any character, four, than any character, four. Capture the whole and the last four
+
+
+13
+
+capture 1280x720  → 1280,720
+capture 1920x1600 → 1920,1600
+capture 1024x768  → 1024,768
+
+(\d{4}).(\d+)     - four digits, any character, then one or more digits. Capture the first four and the rest after the fifth character
+(.{4}).(.+)       - four of any character, any character, then one or more of any character. Capture the first four and those after the fifth
+((.+)x(.+)        - any character, one or more, then a 'x' and then any character, one or more of them. Capture the blocks before and after the 'x'
