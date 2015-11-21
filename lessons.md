@@ -167,6 +167,7 @@ capture Aug 2011  → Aug 2011, 2011
 
 ([A-Za-z]+\s(\d+)) - in the range A-Z and a-z, one or more characters, a blankspace a number or more. Capture the whole and the number(s)
 (\w+\s(.+))        - alphanumerical character, one or more, a blankspace, any character, one or more. Capture the whole and the characters after the blankspace
+(\w+)\b(\d{4})     - alphanumerical one or more characters, a boundary character, four digits. Capture the first characters and the last four
 (.{4}(.{4}))       - any character, four, than any character, four. Capture the whole and the last four
 
 
@@ -178,6 +179,7 @@ capture 1024x768  → 1024,768
 
 (\d{4}).(\d+)     - four digits, any character, then one or more digits. Capture the first four and the rest after the fifth character
 (.{4}).(.+)       - four of any character, any character, then one or more of any character. Capture the first four and those after the fifth
+(.{4})\D(.+)      - any four characters, a non-digit, one or more of any characters
 ((.+)x(.+)        - any character, one or more, then a 'x' and then any character, one or more of them. Capture the blocks before and after the 'x'
 
 
@@ -191,3 +193,15 @@ skip I love cogs
 I love (cat|dog)s - 'I love ' then 'cat' or 'dog' then an 's'
 .*(cat|dog).      - any character zero or more times, 'cat' or 'dog' then any character
 .+(ca|do).+       - any character once or more, 'ca' or 'do' then any character once or more
+
+
+15
+
+match The quick brown fox jumped over the lazy dog.
+match There were 614 instances of students getting 90.0% or above.
+match The FCC had to censor the network for saying &$#*@!.
+
+.                 - any character
+.+                - any character, once or more
+\D+\d{0,3}.+      - any non digit character, once or more, digits, zero to three, and any other character, one or more
+\S+\s\S+\s\S+\s\S+\s\S+\s\S+\s\S+\s\S+\s\S+\s?\S+ - whitespace and non-whitespace characters (with optional characters at the end
