@@ -41,6 +41,7 @@ skip abc1
 \.        - the dot
 \.$       - ending with the dot
 .+\.      - any character, one or more, ending with a dot
+.{3}\.    - any character, three times, ending with a dot
 \W$       - ending with a non alphanumeric character
 .{3}\.    - three characters and then a dot
 
@@ -60,6 +61,7 @@ skip pan
 [^drp]an  - not in the drp range, and followed by 'an'
 (c|m|f)an - c- or m- or d- -an
 
+
 4
 
 match hog
@@ -69,6 +71,8 @@ skip bog
 [^bog]     - not bog
 [^b]og     - og, but not b
 (d|h)og    - d- or h- og
+[dh]og     - d or h and og
+
 
 5
 
@@ -80,10 +84,11 @@ sky   bby
 skip  ccz
 
 
-[A-C]       - everything in the interval A to C
-[A-C][a-p]+ - in the interval A to C, then a to p, one or more
-[^x-z]$     - not having something in the interval x to z at the end
-^[^a-c]     - at the beginning it should not be something in the interval from a to c
+[A-C]           - everything in the interval A to C
+[A-C][a-p]+     - in the interval A to C, then a to p, one or more
+[^x-z]$         - not having something in the interval x to z at the end
+^[^a-c]         - at the beginning it should not be something in the interval from a to c
+[A-C][n-p][a-c]
 
 
 6
@@ -92,8 +97,9 @@ match wazzzzup
 match wazzzup
 skip wazup
 
-z[2]      - z repeating twice
-z{2,9}    - z repeating from twice up to 9 times     
+waz{2,4}up -
+z[2]       - z repeating twice
+z{2,9}     - z repeating from twice up to 9 times     
 
 
 7
@@ -103,6 +109,7 @@ match aabbbbc
 match aacc
 skip  a
 
+aa+b*c+
 a{2}     - a repeating twice
 a{2,4}   - a repeating twice to four times
 c        - having c
@@ -121,6 +128,7 @@ match 24 files found?
 skip No file found.
 
 \d file[s]* found? - a number, 'file' and the s optional, then 'found?'
+\d files? found\?  - better version of the above
 \d         - a digit
 \d+        - a digit or more
 ^\d+\D+\?$ - start with one or more digit, then one or more non-digits, and a question mark at the end
@@ -141,6 +149,7 @@ skip  4.abc
 [ \t]      - in the range blanck space and tab
 [ \t]+     - idem, one or more
 \d\D\s+\D+ - a digit, a non-digit character, one or more blank spaces, one or more non-digits
+\d\.\s+abc 
 
 10
 
@@ -150,7 +159,7 @@ skip Next Mission: successful upon capture of target
 
 ^M      - starting with a capital M
 ^[^LN]  - starting not with L nor with N
-
+^Mission: successful$
 
 11
 
@@ -162,6 +171,7 @@ skip testfile_fake.pdf.tmp
 (.+)\.pdf$       - everything, one character or more, ending with the pdf extension, do not capture the extension
 (\w+)\.pdf$      - every alphanumeric character, once or more, ending with the pdf extension, do not caputre the extension
 (file_\w+)\.pdf$ - every 'file_' plus one or more alphanumeric character, ending with the pdf extension, do not capture the extension
+(file.+)\.pdf$
 
 
 12
@@ -173,6 +183,7 @@ capture Aug 2011  → Aug 2011, 2011
 ([A-Za-z]+\s(\d+)) - in the range A-Z and a-z, one or more characters, a blankspace a number or more. Capture the whole and the number(s)
 (\w+\s(.+))        - alphanumerical character, one or more, a blankspace, any character, one or more. Capture the whole and the characters after the blankspace
 (\w+)\b(\d{4})     - alphanumerical one or more characters, a boundary character, four digits. Capture the first characters and the last four
+(\w+(\d+))
 (.{4}(.{4}))       - any character, four, than any character, four. Capture the whole and the last four
 
 
@@ -186,6 +197,7 @@ capture 1024x768  → 1024,768
 (.{4}).(.+)       - four of any character, any character, then one or more of any character. Capture the first four and those after the fifth
 (.{4})\D(.+)      - any four characters, a non-digit, one or more of any characters
 ((.+)x(.+)        - any character, one or more, then a 'x' and then any character, one or more of them. Capture the blocks before and after the 'x'
+(\d+)\w(\d+) 
 
 
 14
