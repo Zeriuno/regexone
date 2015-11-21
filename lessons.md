@@ -7,6 +7,7 @@ match abc
 .         - any character
 abc       - 
 \D        - any non digits character
+\D+       - any non digits character once or more
 \D{3,7}   - idem, repeating from three to 7 times
 \w        - any alphanumeric character
 \w{3,7}   - idem, repeating from three to 7 times
@@ -25,6 +26,7 @@ match var g = 123;
 \w        - any alphanumeric character (with repetions, if you want {})
 \D        - non digits characters
 \d        - digits characters (eventually combined)
+\D+\d+\D+ - non-digits character, one or more, digits, one or more, non-digits, one or more
 [a-z1-3]+ - characters ranging from a to z and 1 to 3, one occurence or more
 
 
@@ -38,6 +40,7 @@ skip abc1
 
 \.        - the dot
 \.$       - ending with the dot
+.+\.      - any character, one or more, ending with a dot
 \W$       - ending with a non alphanumeric character
 .{3}\.    - three characters and then a dot
 
@@ -55,7 +58,7 @@ skip pan
 [cmf]an   - idem, followed by 'an'
 [^drp]    - not in the drp range: isn't working but it should
 [^drp]an  - not in the drp range, and followed by 'an'
-
+(c|m|f)an - c- or m- or d- -an
 
 4
 
@@ -65,7 +68,7 @@ skip bog
 
 [^bog]     - not bog
 [^b]og     - og, but not b
-
+(d|h)og    - d- or h- og
 
 5
 
@@ -77,9 +80,10 @@ sky   bby
 skip  ccz
 
 
-[A-C]     - from everything in the interval A to C
-[^x-z]$   - not having something in the interval x to z at the end
-^[^a-c]   - at the beginning it should not be something in the interval from a to c
+[A-C]       - everything in the interval A to C
+[A-C][a-p]+ - in the interval A to C, then a to p, one or more
+[^x-z]$     - not having something in the interval x to z at the end
+^[^a-c]     - at the beginning it should not be something in the interval from a to c
 
 
 6
@@ -117,11 +121,12 @@ match 24 files found?
 skip No file found.
 
 \d file[s]* found? - a number, 'file' and the s optional, then 'found?'
-\d      - a digit
-\d+     - a digit or more
-\?      - a question mark
-\?$     - a question mark at the end
-^[^N]   - at th beginning, not a capital N
+\d         - a digit
+\d+        - a digit or more
+^\d+\D+\?$ - start with one or more digit, then one or more non-digits, and a question mark at the end
+\?         - a question mark
+\?$        - a question mark at the end
+^[^N]      - at th beginning, not a capital N
 
 
 9
@@ -131,11 +136,11 @@ match 2.	abc
 match 3.           abc
 skip  4.abc
 
-\s      - a whitespace
-\s+     - a whitespace or more
-[ \t]   - in the range blanck space and tab
-[ \t]+  - idem, one or more
-
+\s         - a whitespace
+\s+        - a whitespace or more
+[ \t]      - in the range blanck space and tab
+[ \t]+     - idem, one or more
+\d\D\s+\D+ - a digit, a non-digit character, one or more blank spaces, one or more non-digits
 
 10
 
