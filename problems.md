@@ -22,3 +22,4 @@ capture 4035555678
 capture 1 416 555 9292
 
 (\d\s?)\W?(\d{3}\W?\d+(-?\s?\d+)*$  - maybe a group with a digit, and maybe a whitespace in the group. Then maybe a non alphanumeric character, three digits which we capture, then maybe a non alphanumeric character, one or more digits, and eventually a group with maybe a dash, maybe a whitespace and then one or more digits, the group being repeated zero or several times, and it stops with that
+ 1?[\s-]?\(?(\d{3})\)?[\s-]?\d{3}[\s-]?\d{4} - copy paste of the website solution
