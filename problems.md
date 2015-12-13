@@ -35,4 +35,5 @@ capture potter@hogwarts.com               → potter
 capture harry@hogwarts.com                → harry
 capture hermione+regexone@hogwarts.com    → hermione
 
-^([\w.]*)  - website soution
+^([\w.]*)  - website soution         - Capture a group of zero or more characters, at the start, and only alphanumeric one. But isn't the dot supposed to be escaped?
+^([\w\.]+) - Capture a group of characters, from the start of the string, made of one or more among alphanumeric characters or dot.
