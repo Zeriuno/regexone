@@ -37,3 +37,20 @@ capture hermione+regexone@hogwarts.com    → hermione
 
 ^([\w.]*)  - website soution         - Capture a group of zero or more characters, at the start, and only alphanumeric one. But isn't the dot supposed to be escaped?
 ^([\w\.]+) - Capture a group of characters, from the start of the string, made of one or more among alphanumeric characters or dot.
+
+
+4
+
+capture <a>This is a link</a>                     → a
+capture <a href='http://regexone.com'>Link</a>    → a
+capture <div class='test_style'>Test</div>        → div
+capture <div>Hello <span>world</span></div>       → div
+
+(\w+)          - Capture one or more alphanumeric characters. '<' will be excluded, as well as whitespaces.
+([a-z]+)       - Just letters.
+<([a-z]+)[\s>] - Just letters captured. Those ust be preceeded by a '<' and followed by a whitespace or a '>'
+
+/*
+>([\w\s]*)<    - This would capture tag content
+='([\w://.]*)' - And this one would capture attribute values
+*/
