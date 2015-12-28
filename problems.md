@@ -54,3 +54,8 @@ capture <div>Hello <span>world</span></div>       → div
 >([\w\s]*)<    - This would capture tag content
 ='([\w://.]*)' - And this one would capture attribute values
 */
+
+
+8
+
+(\w+)://(\w+(\.?-?\w)*):?(\w+)?
