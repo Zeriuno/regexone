@@ -58,4 +58,12 @@ capture <div>Hello <span>world</span></div>       → div
 
 8
 
-(\w+)://(\w+(\.?-?\w)*):?(\w+)?
+
+capture  ftp://file_server.com:21/top_secret/life_changing_plans.pdf    → ftp file_server.com 21
+capture  http://regexone.com/lesson/introduction#section                → http regexone.com
+capture  file://localhost:4040/zip_file                                 → file localhost 4040
+capture  https://s3cur3-server.com:9999/                                → https s3cur3-server.com 9999
+capture  market://search/angry%20birds                                  → market search
+
+(\w+)://(\w+[\.?\-?\w]*):?(\w+)?             - Capture one or more alphanumeric characters, followed by '://' then one or more alphanumeric characters and zero to more groups of '.' (optional) '-' (optional) and alphanumeric characters. Then ':' and, optional, one or more alphanumeric characters
+(\w+)://(\w+[\.?\-?\w]*):?(\d+)?             - Capture one or more alphanumeric characters, followed by '://' then one or more alphanumeric characters and zero to more groups of '.' (optional) '-' (optional) and alphanumeric characters. Then ':' and, optional, one or more digits
