@@ -55,6 +55,13 @@ capture <div>Hello <span>world</span></div>       → div
 ='([\w://.]*)' - And this one would capture attribute values
 */
 
+5
+
+skip     .bash_profile
+skip     workspace.doc
+capture  img0912.jpg     → img0912 jpg
+
+
 
 8
 
