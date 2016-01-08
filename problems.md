@@ -79,8 +79,10 @@ skip     access.lock
 capture 	The quick brown fox...   → The quick brown fox...
 capture  jumped over the lazy dog. → jumped over the lazy dog.
 
+\s*([\w+\s?]+\.+)   - zero or more whitespaces, then capture a group made of one or more blocks of alphanumeric characters and eventually a whitespace, then one or more dots.
 
 ##Problem 7: Extracting information from a log file
+
 
 
 
