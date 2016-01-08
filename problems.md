@@ -70,7 +70,7 @@ skip     img0912.jpg.tmp
 skip     access.lock
 
 
-
+(\w+_?\w*)\.(\w{0,2}g\w{0,2})$  - Capture a group that starts with one or more alphanumeric characters eventually followed by an underscore and then zero or more alphanumeric characters. Then comes a dot. Then we capture a second group which is composed by zero to two alphanumeric characters, a g, zero to two alphanumeric characters more. And this group is the end of the string.
 
 
 8
