@@ -1,4 +1,6 @@
-1
+#Problems
+
+##1
 
 match 3.14529
 match -255.34
@@ -12,7 +14,7 @@ skip 720p
 ^\W?\d+[\.,]?\d{0,5}[e\.]?\d{0,2}[^p]$
 
 
-2
+##2
 
 capture 415-555-1234
 capture 650-555-2345
@@ -25,7 +27,7 @@ capture 1 416 555 9292
  1?[\s-]?\(?(\d{3})\)?[\s-]?\d{3}[\s-]?\d{4} - copy paste of the website solution
 
 
-3
+ ##3
 
 capture tom@hogwarts.com                  → tom
 capture tom.riddle@hogwarts.com           → tom.riddle
@@ -39,7 +41,7 @@ capture hermione+regexone@hogwarts.com    → hermione
 ^([\w\.]+) - Capture a group of characters, from the start of the string, made of one or more among alphanumeric characters or dot.
 
 
-4
+##4
 
 capture <a>This is a link</a>                     → a
 capture <a href='http://regexone.com'>Link</a>    → a
@@ -58,7 +60,7 @@ Comment
 ='([\w://.]*)' - And this one would capture attribute values
 ------------------------------
 
-5
+##5
 
 skip     .bash_profile
 skip     workspace.doc
@@ -73,7 +75,7 @@ skip     access.lock
 (\w+_?\w*)\.(\w{0,2}g\w{0,2})$  - Capture a group that starts with one or more alphanumeric characters eventually followed by an underscore and then zero or more alphanumeric characters. Then comes a dot. Then we capture a second group which is composed by zero to two alphanumeric characters, a g, zero to two alphanumeric characters more. And this group is the end of the string.
 
 
-8
+##8
 
 
 capture  ftp://file_server.com:21/top_secret/life_changing_plans.pdf    → ftp file_server.com 21
