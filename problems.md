@@ -1,6 +1,6 @@
 #Problems
 
-##1
+##Problem 1: Matching a decimal numbers
 
 match 3.14529
 match -255.34
@@ -14,7 +14,7 @@ skip 720p
 ^\W?\d+[\.,]?\d{0,5}[e\.]?\d{0,2}[^p]$
 
 
-##2
+##Problem 2: Matching phone numbers
 
 capture 415-555-1234
 capture 650-555-2345
@@ -27,7 +27,7 @@ capture 1 416 555 9292
  1?[\s-]?\(?(\d{3})\)?[\s-]?\d{3}[\s-]?\d{4} - copy paste of the website solution
 
 
- ##3
+ ##Problem 3: Matching emails
 
 capture tom@hogwarts.com                  → tom
 capture tom.riddle@hogwarts.com           → tom.riddle
@@ -41,7 +41,7 @@ capture hermione+regexone@hogwarts.com    → hermione
 ^([\w\.]+) - Capture a group of characters, from the start of the string, made of one or more among alphanumeric characters or dot.
 
 
-##4
+##Problem 4: Matching HTML
 
 capture <a>This is a link</a>                     → a
 capture <a href='http://regexone.com'>Link</a>    → a
