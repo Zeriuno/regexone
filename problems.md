@@ -50,16 +50,26 @@ capture <div>Hello <span>world</span></div>       → div
 ([a-z]+)       - Just letters.
 <([a-z]+)[\s>] - Just letters captured. Those ust be preceeded by a '<' and followed by a whitespace or a '>'
 
-/*
+
+-----------------------------
+Comment
+
 >([\w\s]*)<    - This would capture tag content
 ='([\w://.]*)' - And this one would capture attribute values
-*/
+------------------------------
 
 5
 
 skip     .bash_profile
 skip     workspace.doc
-capture  img0912.jpg     → img0912 jpg
+capture  img0912.jpg          → img0912 jpg
+capture  updated_img0912.png  → updated_img0912 png
+skip     documentation.html
+capture  favicon.gif          → favicon gif
+skip     img0912.jpg.tmp
+skip     access.lock
+
+
 
 
 
