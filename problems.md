@@ -54,10 +54,13 @@ capture <div>Hello <span>world</span></div>       → div
 
 
 -----------------------------
+
 Comment
 
->([\w\s]*)<    - This would capture tag content
+([\w\s]*)    - This would capture tag content
+
 ='([\w://.]*)' - And this one would capture attribute values
+
 ------------------------------
 
 ##Problem 5: Matching specific filenames
