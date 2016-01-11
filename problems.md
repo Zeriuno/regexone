@@ -86,7 +86,12 @@ capture  jumped over the lazy dog. → jumped over the lazy dog.
 
 ##Problem 7: Extracting information from a log file
 
-
+skip     W/dalvikvm( 1553): threadid=1: uncaught exception
+skip     E/( 1553): FATAL EXCEPTION: main
+skip     E/( 1553): java.lang.StringIndexOutOfBoundsException
+capture  E/( 1553): at widget.List.makeView(ListView.java:1727)      → makeView ListView.java 1727
+capture  E/( 1553):   at widget.List.fillDown(ListView.java:652)     → fillDown  ListView.java  652
+capture  E/( 1553): at widget.List.fillFrom(ListView.java:709)       → fillFrom  ListView.java  709
 
 
 ##Problem 8: Parsing and extracting data from a URL
