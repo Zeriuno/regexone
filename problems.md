@@ -94,6 +94,8 @@ capture  E/( 1553):   at widget.List.fillDown(ListView.java:652)     → fillDow
 capture  E/( 1553): at widget.List.fillFrom(ListView.java:709)       → fillFrom  ListView.java  709
 
 
+.*at widget.List.(\w+)\((\w{8}\.\w{4})\:(\d+)\)
+
 ##Problem 8: Parsing and extracting data from a URL
 
 
